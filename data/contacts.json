@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "full_name": "Naveed Fida",
+    "email": "nf@example.com",
+    "phone_number": "12345678901",
+    "tags": "work,friend"
+  },
+  {
+    "id": 2,
+    "full_name": "Victor Reyes",
+    "email": "vpr@example.com",
+    "phone_number": "09876543210",
+    "tags": "work,friend"
+  },
+  {
+    "id": 3,
+    "full_name": "Pete Hanson",
+    "email": "ph@example.com",
+    "phone_number": "54321098761",
+    "tags": null
+  },
+  {
+    "full_name": "Max van Davenhorst",
+    "phone_number": "+31642715134",
+    "email": null,
+    "tags": "work",
+    "id": 4
+  },
+  {
+    "full_name": "Naomi van Davenhorst",
+    "phone_number": "0642715134",
+    "email": null,
+    "tags": "work, friend",
+    "id": 5
+  },
+  {
+    "full_name": "1234",
+    "phone_number": "0642715134",
+    "email": null,
+    "tags": "work, friend",
+    "id": 6
+  },
+  {
+    "full_name": "Dana Chen",
+    "phone_number": "0703869178",
+    "email": null,
+    "tags": "work, friend",
+    "id": 7
+  },
+  {
+    "full_name": "Dr Werker",
+    "phone_number": "0703869178",
+    "email": null,
+    "tags": "work, friend",
+    "id": 8
+  },
+  {
+    "full_name": "Edwin van Davenhorst",
+    "phone_number": "9054799040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 9
+  },
+  {
+    "full_name": "Edwin van Davenhorst",
+    "phone_number": "9054799040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 10
+  },
+  {
+    "full_name": "Edwin van Davenhorst",
+    "phone_number": "9054799040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 11
+  },
+  {
+    "full_name": "Edwin van Davenhorst",
+    "phone_number": "9054799040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 12
+  },
+  {
+    "full_name": "Edwin Davenhorst",
+    "phone_number": "9054799040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 13
+  },
+  {
+    "full_name": "Edwin Davenhorst",
+    "phone_number": "905-479-9040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 14
+  },
+  {
+    "full_name": "Edwin Davenhorst",
+    "phone_number": "905-479-9040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 15
+  },
+  {
+    "full_name": "Edwin Davenhorst",
+    "phone_number": "905-479-9040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 16
+  },
+  {
+    "full_name": "Edwin Davenhorst",
+    "phone_number": "905-479-9040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 17
+  },
+  {
+    "full_name": "Dana Chen",
+    "phone_number": "+31642715134",
+    "email": null,
+    "tags": "work, friend,  friend",
+    "id": 18
+  },
+  {
+    "full_name": "Dana Chen",
+    "phone_number": "905-479-9040",
+    "email": null,
+    "tags": "work, friend",
+    "id": 19
+  }
+]

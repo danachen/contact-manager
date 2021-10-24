@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-head {
+  background-color: #644a8c;
+  color: white;
+}
+
+.error-message {
+  color: red;
+  font-size: 1em;
+}
+
+.card {
+  padding: 10px;
+  margin: 20px;
+}
+
+.flexbuttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+button {
+  margin-right: 20px;
+}
