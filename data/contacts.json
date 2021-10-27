@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "full_name": "Naveed Fida",
-    "email": "nf@example.com",
-    "phone_number": "12345678901",
-    "tags": "work,friend"
-  },
-  {
     "id": 2,
     "full_name": "Victor Reyes",
     "email": "vpr@example.com",
@@ -18,13 +11,41 @@
     "full_name": "Pete Hanson",
     "email": "ph@example.com",
     "phone_number": "54321098761",
-    "tags": null
+    "tags": "work"
   },
   {
-    "full_name": "Dana Chen",
-    "phone_number": "905-479-9040",
-    "email": "danaqchen@gmail.com",
-    "tags": "work",
+    "full_name": "Naveed Fia",
+    "phone_number": "123-456-7890",
+    "email": "nf@example.com",
+    "tags": "work,friend",
     "id": 4
+  },
+  {
+    "full_name": "Vic Reyes",
+    "phone_number": "12345678901",
+    "email": "vic@google.com",
+    "tags": "work,friend",
+    "id": 5
+  },
+  {
+    "full_name": "Peter Jansen",
+    "phone_number": "01234567890",
+    "email": "peter@amazon.nl",
+    "tags": "work",
+    "id": 6
+  },
+  {
+    "full_name": "Abby Jones",
+    "phone_number": "01234567890",
+    "email": "abby@abby.com",
+    "tags": "ski",
+    "id": 7
+  },
+  {
+    "full_name": "Bobby Brown",
+    "phone_number": "01234567890",
+    "email": "bobby@brown.nl",
+    "tags": "xfit,friend",
+    "id": 8
   }
 ]
