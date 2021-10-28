@@ -47,5 +47,12 @@
     "email": "bobby@brown.nl",
     "tags": "xfit,friend",
     "id": 8
+  },
+  {
+    "full_name": "Lance Snow",
+    "phone_number": "01234567890",
+    "email": "lance@snow.nl",
+    "tags": "work,ski",
+    "id": 9
   }
 ]

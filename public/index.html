@@ -42,7 +42,7 @@
               <input
                 type="text"
                 class="form-control input-sm input-normal search-box"
-                placeholder="Press Enter to Search"
+                placeholder="Enter any part of contact name to search"
               />
             </div>
           </div>
@@ -172,14 +172,18 @@
             <br />
 
             <div class="input-group">
-              <label for="contact-tags" class="form-label">Tags: </label>
-              <input
-                class="contact contact-tags form-control"
-                type="text"
-                name="tags"
-              />
-              <br />
-              <ul class="tag-list"></ul>
+              <div class="row">
+                <label for="contact-tags" class="form-label">Tags: </label>
+                <input
+                  class="contact contact-tags form-control"
+                  type="text"
+                  name="tags"
+                />
+                <br />
+              </div>
+              <div class="row">
+                <ul class="tag-list pt-5"></ul>
+              </div>
               <p class="error-message"></p>
             </div>
             <br />

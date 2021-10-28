@@ -12,9 +12,23 @@ App = {
     for (let tag of Object.keys(this.tagList)) {
       const li = document.createElement('li');
       li.classList.add('list-of-tags');
-      li.style.backgroundColor='white';
+      if (tag === 'all') {
+        li.style.backgroundColor='lightgray';
+      } else {
+        li.style.backgroundColor='white';
+      }
+      
       li.innerText = tag;
       this.tagCloudSearch.append(li);
+
+      if (tag === 'all') continue;
+      
+      const li2 = document.createElement('li');
+      li2.classList.add('list-of-tags-add-contact');
+      li2.classList.add('d-inline');
+      li2.style.backgroundColor='white';
+      li2.innerText = tag;
+      this.tagCloudAddNewContact.append(li2);
     }
   },
 
@@ -188,6 +202,11 @@ App = {
     const filteredTags = Object.keys(this.tagList).filter(tag => this.tagList[tag] === true);
     
     this.filteredContacts = [];
+
+    // TODO: how to have ALL not show up when it's rendered under the add contact sheet
+    console.log(tagKey === 'all');
+    console.log(this.contactList);
+    
     for (let contact of this.contactList) {
       for (let tag of filteredTags) {
         if (contact.tags.includes(tag)) {
@@ -197,7 +216,18 @@ App = {
         }
       }
     }
+
+    if (this.tagList['all']) this.filteredContacts = this.contactList;
     this.renderContacts(this.filteredContacts);
+  },
+
+  addTagToForm(e) {
+    const tag = e.target.textContent;
+    if (document.getElementsByClassName('contact-tags')[0].value) {
+      document.getElementsByClassName('contact-tags')[0].value += ',' + tag;
+    } else {
+      document.getElementsByClassName('contact-tags')[0].value += tag;
+    }
   },
 
   handleSearch() {
@@ -256,7 +286,11 @@ App = {
     } else if (e.target.id === 'delete-contact') {
       this.getExistingContact(e, this.deleteContact);
     } else if (e.target.tagName === 'LI') {
-      this.filterContactsByTags(e);
+      if (Array.from(e.target.classList).includes('list-of-tags')) {
+        this.filterContactsByTags(e);
+      } else if (Array.from(e.target.classList).includes('list-of-tags-add-contact')) {
+        this.addTagToForm(e);
+      }
     }
   },
 
@@ -273,11 +307,12 @@ App = {
     this.form = document.getElementById('add');
     this.tagField = document.querySelector('.contact-tags');
     this.tagCloudSearch = document.querySelector('.tag-search');
+    this.tagCloudAddNewContact = document.querySelector('.tag-list');
     this.url = 'http://localhost:3000';
     this.contactList;
     this.template;
     this.currentContact;
-    this.tagList = {};
+    this.tagList = {all: true};
     this.addContactBoolean = true;
     this.getAllContacts();
     this.searchInput = [];
