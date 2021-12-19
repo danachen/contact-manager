@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Contact Manager by Dana Chen</title>
     <script src="/javascripts/jquery.js"></script>
     <script src="/javascripts/handlebars.js"></script>
     <link
@@ -31,14 +31,16 @@
         <div class="row">
           <div class="col-sm-6 mx-auto">
             <div class="input-group">
-              <button
-                id="add-contact"
-                type="button"
-                class="btn btn-primary mx-auto add-contact"
-                type="submit"
+              <a href="#add"
+                ><button
+                  id="add-contact"
+                  type="button"
+                  class="btn btn-primary mx-auto add-contact"
+                  type="submit"
+                >
+                  Add Contact
+                </button></a
               >
-                Add Contact
-              </button>
               <input
                 type="text"
                 class="form-control input-sm input-normal search-box"
@@ -199,5 +201,5 @@
       </section>
     </div>
   </body>
-  <script src="/javascripts/app.js"></script>
+  <script type="module" src="/javascripts/app.js"></script>
 </html>

@@ -11,7 +11,7 @@
     "full_name": "Pete Hanson",
     "email": "ph@example.com",
     "phone_number": "54321098761",
-    "tags": "work"
+    "tags": "work,gym"
   },
   {
     "full_name": "Naveed Fia",
@@ -42,17 +42,24 @@
     "id": 7
   },
   {
-    "full_name": "Bobby Brown",
-    "phone_number": "01234567890",
-    "email": "bobby@brown.nl",
-    "tags": "xfit,friend",
-    "id": 8
-  },
-  {
     "full_name": "Lance Snow",
     "phone_number": "01234567890",
     "email": "lance@snow.nl",
-    "tags": "work,ski",
+    "tags": "ski,gym",
+    "id": 8
+  },
+  {
+    "full_name": "Dorota Gorlow",
+    "phone_number": "01234567890",
+    "email": "dorota@gmail.com",
+    "tags": "music",
     "id": 9
+  },
+  {
+    "full_name": "Ally McBeal",
+    "phone_number": "01234567891",
+    "email": "ally@mcbeal.nl",
+    "tags": "gym",
+    "id": 10
   }
 ]

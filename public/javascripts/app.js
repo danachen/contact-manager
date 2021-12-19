@@ -1,13 +1,6 @@
-App = {
-  // Helper methods
-  debounce(func, delay) {
-    let timeout;
-    return (...args) => {
-      if (timeout) { clearTimeout(timeout) }
-        timeout = setTimeout(() => func.apply(null, args), delay);
-    };
-  },
+import debounce from './debounce.js';
 
+const App = {
   renderTags() {
     for (let tag of Object.keys(this.tagList)) {
       const li = document.createElement('li');
@@ -49,7 +42,6 @@ App = {
       }
       this.renderTags();
     })
-
     request.send();
   },
 
@@ -129,7 +121,6 @@ App = {
     request.setRequestHeader('Content-Type', 'application/json');
     request.addEventListener('load', () => {
       if (request.status === 201) {
-        console.log('edit successful');
         window.location.href = "/"
       }
     })
@@ -137,13 +128,12 @@ App = {
   },
 
   loadCurrentContactInfo(contact) {
-    this.addContactBoolean = false;
     let form = document.getElementById('add');
     form.hidden = false;
-    [fullName, email, phone, tags] = [contact['full_name'], contact['email'], contact['phone_number'], contact['tags']];
-    form.querySelector('.contact-name').value = fullName;
+    const {full_name, email, phone_number, tags} = contact;
+    form.querySelector('.contact-name').value = full_name;
     form.querySelector('.contact-email').value = email;
-    form.querySelector('.contact-phone').value = phone;
+    form.querySelector('.contact-phone').value = phone_number;
     form.querySelector('.contact-tags').value = tags;
   },
 
@@ -167,7 +157,7 @@ App = {
     request.open('DELETE', `/api/contacts/${id}`);
     request.addEventListener('load', () => {
       if (request.status === 204) {
-        console.log('delete successful');
+        window.location.href = "/"
       }
     });
     request.send();
@@ -200,12 +190,7 @@ App = {
     const tagKey = e.target.textContent;
     this.tagList[tagKey] = !this.tagList[tagKey];
     const filteredTags = Object.keys(this.tagList).filter(tag => this.tagList[tag] === true);
-    
     this.filteredContacts = [];
-
-    // TODO: how to have ALL not show up when it's rendered under the add contact sheet
-    console.log(tagKey === 'all');
-    console.log(this.contactList);
     
     for (let contact of this.contactList) {
       for (let tag of filteredTags) {
@@ -231,7 +216,6 @@ App = {
   },
 
   handleSearch() {
-    // TODO: if CMD-Backspace is clicked on, it does not wipe away the whole input row
     const currentSearchStr = this.cleanName(this.searchInput.join(''));
     const regex = new RegExp(`\w?${currentSearchStr}\w?`);
     this.filteredContacts = this.contactList.filter(contact => this.cleanName(contact['full_name']).match(regex));
@@ -260,6 +244,16 @@ App = {
         this.currentSearchIndex = this.searchInput.length;
       } else {
         this.currentSearchIndex += 1;
+      }
+    }
+
+    this.keysPressed[e.key] = true;
+
+    if (e.key === 'Meta') {
+      if (this.keysPressed['Backspace'] && e.key == 'Meta') {
+        this.searchInput = [];
+        this.currentSearchIndex = 0;
+        this.renderContacts(this.contactList);
       }
     }
   },
@@ -294,9 +288,14 @@ App = {
     }
   },
 
+  handleKeyup(e) {
+    delete this.keysPressed[e.key];
+  },
+
   bindEvents() {
     document.addEventListener('click', this.handleClick.bind(this));
     document.addEventListener('keydown', this.handleKeydown.bind(this));
+    document.addEventListener('keyup', this.handleKeyup.bind(this));
     document.querySelector('input').addEventListener('input', this.handleSearch.bind(this));
   },
 
@@ -317,11 +316,12 @@ App = {
     this.getAllContacts();
     this.searchInput = [];
     this.currentSearchIndex = this.searchInput.length;
-    this.handleSearch = this.debounce(this.handleSearch.bind(this), 300);
+    this.handleSearch = debounce(this.handleSearch.bind(this), 300);
     this.bindEvents();
     this.filteredContacts = this.contactList;
     this.contactTemplate = document.getElementById('contact-template').innerHTML;
     this.tagsClickedOn = [];
+    this.keysPressed = {};
   },
 }
 
