@@ -10,7 +10,7 @@ This contact manager was created as a Javascript front-end exercise.
 - Run `npm start`
 - Access app at `[http://localhost:3000/](http://localhost:3000/`
 
-Features:
+## Features
 
 - By clicking on Create Contact, user can add contact by name, email, phone, number, and tag them with a keyword, e.g. coworker, friend, family, etc
 - User can search through their existing list of contacts by typing part of a name, or by clicking and unclicking one or more tags
