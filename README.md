@@ -1,10 +1,10 @@
-Contacto - A contact manager app
+# Contacto - A contact manager app
 
-# Overview
+## Overview
 
 This contact manager was created as a Javascript front-end exercise.
 
-# To run the app
+## To run the app
 
 - Clone into the github repo `git clone https://github.com/danachen/contact-manager.git`
 - Run `npm start`
